@@ -3,4 +3,5 @@ dj-database-url
 psycopg[binary]
 whitenoise
 gunicorn
+pandas
 scikit-learn
