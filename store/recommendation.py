@@ -1,75 +1,77 @@
-from .models import Product
+
+from functools import lru_cache
 
 from sklearn.feature_extraction.text import TfidfVectorizer
-
 from sklearn.metrics.pairwise import cosine_similarity
+
+from .models import Product
+
+
+@lru_cache(maxsize=1)
+def _get_product_similarity():
+    """
+    Calculate product similarities once and cache the result.
+    Clear the cache when product data changes.
+    """
+    products = list(Product.objects.all().order_by("id"))
+
+    if len(products) < 2:
+        return products, None
+
+    product_data = [
+        f"{product.name} {product.category} {product.description or ''}"
+        for product in products
+    ]
+
+    vectorizer = TfidfVectorizer(
+        stop_words="english",
+        max_features=3000,
+    )
+
+    tfidf_matrix = vectorizer.fit_transform(product_data)
+
+    # Keep the similarity matrix sparse to reduce memory usage.
+    similarity_matrix = cosine_similarity(
+        tfidf_matrix,
+        dense_output=False,
+    )
+
+    return products, similarity_matrix
 
 
 def get_recommendations(product_id):
+    products, similarity_matrix = _get_product_similarity()
 
-    products = Product.objects.all()
-
-    if products.count() < 2:
+    if similarity_matrix is None:
         return []
 
-    product_data = []
-
-    for product in products:
-
-        text = f"""
-        {product.name}
-        {product.category}
-        {product.description}
-        """
-
-        product_data.append(text)
-
-    vectorizer = TfidfVectorizer(
-        stop_words='english'
+    current_index = next(
+        (
+            index
+            for index, product in enumerate(products)
+            if product.id == product_id
+        ),
+        None,
     )
-
-    tfidf_matrix = vectorizer.fit_transform(
-        product_data
-    )
-
-    similarity_matrix = cosine_similarity(
-        tfidf_matrix
-    )
-
-    product_list = list(products)
-
-    current_index = None
-
-    for i, product in enumerate(product_list):
-
-        if product.id == product_id:
-
-            current_index = i
-
-            break
 
     if current_index is None:
-
         return []
 
-    similarity_scores = list(
-        enumerate(
-            similarity_matrix[current_index]
-        )
-    )
+    row = similarity_matrix.getrow(current_index)
 
     similarity_scores = sorted(
-        similarity_scores,
-        key=lambda x: x[1],
-        reverse=True
+        zip(row.indices, row.data),
+        key=lambda item: item[1],
+        reverse=True,
     )
 
-    recommended_products = []
+    return [
+        products[index]
+        for index, score in similarity_scores
+        if index != current_index
+    ][:4]
 
-    for index, score in similarity_scores[1:5]:
 
-        recommended_products.append(
-            product_list[index]
-        )
-
-    return recommended_products
+def clear_recommendation_cache():
+    """Call this after adding, editing, or deleting products."""
+    _get_product_similarity.cache_clear()
