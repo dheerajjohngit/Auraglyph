@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<section class="products orders-section">
+
+    <div class="container">
+
+        <h2 class="scroll-animate">
+            MY ORDERS
+        </h2>
+
+        {% for order in orders %}
+
+        <div class="cart-item mb-4">
+
+            <div class="cart-details">
+
+                <h3>
+                    Order #{{ order.id }}
+                </h3>
+
+                <p>
+                    {{ order.created_at }}
+                </p>
+
+                <p>
+                    Payment: {{ order.payment_method }}
+                </p>
+
+                <h4>
+                    ₹{{ order.total_amount }}
+                </h4>
+
+            </div>
+
+        </div>
+
+        {% empty %}
+
+        <h3 class="glass-box text-center">
+
+            No orders yet
+
+        </h3>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
+

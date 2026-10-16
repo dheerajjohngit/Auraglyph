@@ -1,0 +1,314 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- HERO SECTION -->
+
+<section class="hero">
+
+    <video class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source src="{% static 'videos/check.mp4' %}" type="video/mp4">
+
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-dots"></div>
+
+    <div class="container hero-content text-center">
+
+        <h4 class="glass-box">
+            CHECKOUT
+        </h4>
+
+        <p class="glass-box">
+            Complete your order and continue your immersive
+            futuristic shopping experience with AURAGLYPH.
+        </p>
+
+        <a href="#checkout-section"
+            class="shop-btn btn btn-dark rounded-pill">
+
+            Continue Checkout
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- CHECKOUT SECTION -->
+
+<section class="checkout-section products"
+    id="checkout-section">
+
+    <div class="container">
+
+        <h2 class="scroll-animate">
+            SHIPPING & PAYMENT
+        </h2>
+
+        <div class="checkout-layout">
+
+            <!-- LEFT SIDE -->
+
+            <div class="checkout-form-wrapper scroll-animate">
+
+                <form method="POST" class="checkout-form">
+
+                    {% csrf_token %}
+
+                    <!-- SHIPPING -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            SHIPPING DETAILS
+                        </h3>
+
+                        <input type="text"
+                            name="full_name"
+                            placeholder="Full Name"
+                            required>
+
+                        <input type="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required>
+
+                        <input type="text"
+                            name="phone"
+                            placeholder="Phone Number"
+                            required>
+
+                        <textarea
+                            name="address"
+                            placeholder="Shipping Address"
+                            rows="4"
+                            required></textarea>
+
+                        <div class="double-input">
+
+                            <input type="text"
+                                name="city"
+                                placeholder="City"
+                                required>
+
+                            <input type="text"
+                                name="state"
+                                placeholder="State"
+                                required>
+
+                        </div>
+
+                        <input type="text"
+                            name="pincode"
+                            placeholder="Pincode"
+                            required>
+
+                    </div>
+
+
+
+
+
+                    <!-- PAYMENT -->
+
+                    <div class="form-section">
+
+                        <h3>
+                            PAYMENT METHOD
+                        </h3>
+
+                        <div class="payment-options">
+
+                            <label class="payment-card">
+
+                                <input type="radio"
+                                    name="payment_method"
+                                    value="Credit / Debit Card"
+                                    required>
+
+                                <span>
+                                    Credit / Debit Card
+                                </span>
+
+                            </label>
+
+                            <label class="payment-card">
+
+                                <input type="radio"
+                                    name="payment_method"
+                                    value="UPI">
+
+                                <span>
+                                    UPI Payment
+                                </span>
+
+                            </label>
+
+                            <label class="payment-card">
+
+                                <input type="radio"
+                                    name="payment_method"
+                                    value="Cash On Delivery">
+
+                                <span>
+                                    Cash On Delivery
+                                </span>
+
+                            </label>
+
+                        </div>
+
+                    </div>
+
+
+
+
+
+                    <!-- BUTTON -->
+
+                    <button type="submit"
+                        class="btn btn-dark rounded-pill w-100">
+
+                        Place Order
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="checkout-summary scroll-animate">
+
+                <h3>
+                    ORDER SUMMARY
+                </h3>
+
+                {% for item in cart_items %}
+
+                <div class="summary-product">
+
+                    <img src="{{ item.product.image.url }}">
+
+                    <div>
+
+                        <h4>
+                            {{ item.product.name }}
+                        </h4>
+
+                        <p>
+                            ₹{{ item.product.price }}
+                        </p>
+
+                    </div>
+
+                </div>
+
+                {% endfor %}
+
+                <div class="summary-row">
+
+    <span>Subtotal</span>
+
+    <span>₹{{ subtotal|floatformat:2 }}</span>
+
+</div>
+
+<div class="summary-row">
+
+    <span>GST (18%)</span>
+
+    <span>₹{{ gst|floatformat:2 }}</span>
+
+</div>
+
+
+                <div class="summary-row">
+
+                    <span>Shipping</span>
+
+                    <span>Free</span>
+
+                </div>
+
+                <div class="summary-row total-row">
+
+    <span>Total</span>
+
+    <span>₹{{ total|floatformat:2 }}</span>
+
+</div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- EXPERIENCE SECTION -->
+
+<section class="philosophy-section">
+
+    <div class="container">
+
+        <div class="philosophy-box">
+
+            <div class="philosophy-image-wrapper">
+
+                <img src="https://framerusercontent.com/images/Ws9WTJB7ecBCGQaI267SU35hs.jpg?width=2160&height=1720"
+                    class="philosophy-image">
+
+            </div>
+
+            <h2 class="philosophy-title">
+
+                SECURE & MINIMAL
+
+            </h2>
+
+            <p class="philosophy-text">
+
+                AURAGLYPH delivers a seamless checkout experience
+                designed with simplicity, transparency,
+                and modern digital interaction.
+
+            </p>
+
+            <h4 class="philosophy-quote">
+
+                "Designed for clarity. Built for trust."
+
+            </h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+

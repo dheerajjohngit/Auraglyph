@@ -1,0 +1,74 @@
+
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="hero auth-section">
+
+    <video class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source src="{% static 'videos/wish.mp4' %}" type="video/mp4">
+
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-dots"></div>
+
+    <div class="container auth-container">
+
+        <div class="auth-card scroll-animate">
+
+            <h2 class="glass-box">
+                LOGIN
+            </h2>
+
+            <p class="glass-box auth-subtitle">
+                Continue your futuristic shopping experience.
+            </p>
+
+            <form method="POST" class="auth-form">
+
+                {% csrf_token %}
+
+                <input type="text"
+                    name="username"
+                    placeholder="Username"
+                    required>
+
+                <input type="password"
+                    name="password"
+                    placeholder="Password"
+                    required>
+
+                <button type="submit"
+                    class="shop-btn btn btn-dark rounded-pill">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <p class="auth-switch">
+
+                Don’t have an account?
+
+                <a href="{% url 'register' %}">
+                    Register
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+```

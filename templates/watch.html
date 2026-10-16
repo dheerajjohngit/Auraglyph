@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/watch.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="glass-box">WATCH EXCELLENCE</h1>
+            <p class="glass-box">
+                Premium smartwatches with sleek design and advanced functionality.
+            </p><br><br><br><br><br><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">
+    Explore Watches
+</a>
+
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">Watch Collection</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <div class="col">
+
+    <div class="card h-100 scroll-animate">
+
+        <!-- WISHLIST ICON -->
+
+       <a href="{% url 'add_to_wishlist' 47 %}" class="wishlist-icon" >♡</a>
+
+        <div class="card-light"></div>
+
+        <img src="https://xmartifydubai.com/wp-content/uploads/2024/01/Global-Version-CMF-by-Nothing-Watch-Pro-1-96-AMOLED-Bluetooth-5-3-BT-Calls-with.png_640x640-2.webp"
+            class="card-img-top"
+            alt="CMF by Nothing Watch Pro">
+
+        <div class="card-body">
+
+            <h5 class="card-title">
+                CMF by Nothing Watch Pro
+            </h5>
+
+            <p class="card-text">
+                Smart simplicity with a bold rectangular AMOLED display,
+                smooth Bluetooth calling, and everyday fitness tracking.
+            </p>
+
+            <a href="{% url 'product_detail' 47 %}"
+                class="btn btn-outline-dark rounded-pill w-100">
+
+                Explore Product
+            
+            </a>
+            <a href="{% url 'add_to_cart' 47 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+
+        </div>
+
+    </div>
+
+</div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 48 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Watch-Pro-2_Orange_1.png?v=1745489716"
+                            class="card-img-top" alt="CMF by Nothing Watch Pro 2">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF by Nothing Watch Pro 2</h5>
+                            <p class="card-text">A refined smartwatch with a premium circular design, customizable bezels, AMOLED brilliance, and seamless daily performance.
+                            </p>
+                            <a href="{% url 'product_detail' 48 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 48 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 49 %}" class="wishlist-icon" >♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0043_CMF-Watch-3-Pro-Orange.png?v=1753757329"
+                            class="card-img-top" alt="CMF by Nothing Watch 3 Pro">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF by Nothing Watch Pro 3</h5>
+                            <p class="card-text">The next generation of CMF smartwatches featuring advanced health sensors, dual-band GPS, enhanced battery life, and a futuristic design.</p>
+                            <a href="{% url 'product_detail' 49 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 49 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                
+                
+            </div>
+        </div>
+    </section>
+
+    {% endblock %}
+
+   

@@ -1,0 +1,623 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/nothing2.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h4 class="glass-box">THE FUTURE OF MINIMAL TECH</h4>
+
+            <p class="glass-box">
+                Explore premium Nothing-inspired accessories, transparent aesthetics, and glyph-style design.
+            </p><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Shop Now</a>
+        </div>
+    </section>
+
+    <!-- FEATURED PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">Nothing & CMF Products</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 g-4">
+                <div class="col">
+                    <a class="card category-card h-100 scroll-animate" href="{% url 'phones' %}">
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/phone-3.jpg?v=1752560157"
+                            alt="Nothing Products">
+                        <div class="category-content">
+                            <h3>Nothing</h3>
+                            <p>Minimal, transparent technology made for modern users.</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="col">
+                    <a class="card category-card h-100 scroll-animate" href="{% url 'cmf' %}">
+                        <div class="card-light"></div>
+                        <img src="https://static.beebom.com/wp-content/uploads/2025/04/CMF-Phone-2-Pro-Verdict.jpg?w=1168&quality=75"
+                            alt="CMF Products">
+                        <div class="category-content">
+                            <h3>CMF</h3>
+                            <p>Color, materials, finishes and thoughtful surface design.</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container">
+            <div class="about-row">
+                <div class="about-image-wrapper scroll-animate">
+                    <img src="https://cdn.sanity.io/images/gtd4w1cq/production/d2a928661850d77fa8db5489eb53af14990639e8-4096x2305.jpg"
+                        alt="Transparent tech design" class="about-image" />
+                </div>
+                <div class="about-content scroll-animate">
+                    <h2>ABOUT AURAGLYPH</h2>
+                    <p>
+                        AURAGLYPH is a futuristic ecommerce platform inspired by transparent technology, minimalism, and
+                        iconic glyph aesthetics. It is designed for modern tech lovers who value clarity, craftsmanship,
+                        and a refined user experience.
+                    </p>
+                    <p>
+                        We curate collections that blend subtle materials, premium finishes, and bold design language —
+                        from Nothing-inspired hardware to CMF-driven accessories. Every product is chosen to feel fresh,
+                        tactile, and unmistakably modern.
+                    </p>
+                    <ul>
+                        <li class="scroll-animate">Minimal, functional product curation</li>
+                        <li class="scroll-animate">Transparent materials and premium finishes</li>
+                        <li class="scroll-animate">Bold, expressive design for everyday tech</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+<!-- MARQUEE -->
+
+<section class="marquee-section">
+
+    <section class="marquee-section">
+
+    <div class="marquee-track">
+
+        <!-- First Set -->
+
+        <span>PREMIUM</span>
+        <span>•</span>
+
+        <span>TRANSPARENT</span>
+        <span>•</span>
+
+        <span>MINIMAL</span>
+        <span>•</span>
+
+        <span>CONNECTED</span>
+        <span>•</span>
+
+        <span>FUTURISTIC</span>
+        <span>•</span>
+
+        <!-- Duplicate Set -->
+
+        <span>INNOVATIVE</span>
+        <span>•</span>
+
+        <span>SEAMLESS</span>
+        <span>•</span>
+
+        <span>INTUITIVE</span>
+        <span>•</span>
+
+        <span>PURPOSEFUL</span>
+        <span>•</span>
+
+        <span>MODERN</span>
+        <span>•</span>
+
+
+        <span>DISTINCTIVE</span>
+        <span>•</span>
+
+        <span>ELEGANT</span>
+        <span>•</span>
+
+        <span>SMART</span>
+        <span>•</span>
+
+        <span>DYNAMIC</span>
+        <span>•</span>
+
+        <span>BOLD</span>
+        <span>•</span>
+
+    </div>
+
+</section>
+
+</section>
+
+
+<!-- ECOSYSTEM SECTION -->
+
+<section class="ecosystem-section">
+
+    <div class="container">
+
+        <div class="section-header text-center">
+
+            <h2 class="ecosystem-title">
+                ONE ECOSYSTEM.
+                <br>
+                ENDLESS POSSIBILITIES.
+            </h2>
+
+            <p class="ecosystem-subtitle">
+
+                Connect your phone, audio, watch and accessories
+                into one seamless transparent ecosystem.
+
+            </p>
+
+        </div>
+
+        <div class="ecosystem-flow">
+
+    <div class="eco-card scroll-animate">
+        <span class="eco-icon">📱</span>
+        <h4>Phone</h4>
+    </div>
+
+    <div class="eco-arrow">→</div>
+
+    <div class="eco-card scroll-animate">
+        <span class="eco-icon">🎧</span>
+        <h4>Audio</h4>
+    </div>
+
+    <div class="eco-arrow">→</div>
+
+    <div class="eco-card scroll-animate">
+        <span class="eco-icon">⌚</span>
+        <h4>Watch</h4>
+    </div>
+
+    <div class="eco-arrow">→</div>
+
+    <div class="eco-card scroll-animate">
+        <span class="eco-icon">⚙️</span>
+        <h4>Accessories</h4>
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SIGNATURE SHOWCASE -->
+
+<section class="showcase-section">
+
+    <div class="container">
+
+        <!-- SECTION HEADING -->
+
+        <div class="showcase-heading text-center scroll-animate">
+
+            <span class="section-badge">
+
+                SIGNATURE COLLECTION
+
+            </span>
+
+            <h2 class="showcase-main-title">
+
+                OUR MOST ICONIC DEVICE
+
+            </h2>
+
+            <p class="showcase-main-subtitle">
+
+                A showcase of transparency, innovation and
+                minimalist design philosophy.
+
+            </p>
+
+        </div>
+
+        <!-- CONTENT -->
+
+        <div class="showcase-content scroll-animate">
+
+            <div class="showcase-text scroll-animate">
+
+                <h2>
+
+                    NOTHING PHONE 4(a) PRO
+
+                </h2>
+
+                <p>
+
+                    Pure design.
+                    No distractions.
+                    Just innovation.
+
+                    Experience a device built around
+                    transparency, minimalism and
+                    meaningful interactions.
+
+                </p>
+
+                <a href="{% url 'product_detail' 2 %}"
+                   class="shop-btn btn btn-dark rounded-pill">
+
+                    Explore Device
+
+                </a>
+
+            </div>
+
+            <div class="showcase-image scroll-animate"
+                 style="position: relative;
+                        overflow: hidden;
+                        border-radius: 40px;">
+
+                <video autoplay muted loop>
+
+                    <source src="{% static 'videos/nothing2.mp4' %}"
+                            type="video/mp4">
+
+                </video>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+
+<!-- AUDIO VISUALIZER -->
+
+<section class="visualizer-section">
+
+    <div class="container">
+
+        <div class="text-center scroll-animate">
+
+            <h2 class="visualizer-title">
+
+                DESIGNED TO BE HEARD
+
+            </h2>
+
+            <p class="visualizer-subtitle">
+
+                Immersive audio experiences inspired
+                by clarity and precision.
+
+            </p>
+
+        </div>
+
+        <div class="equalizer scroll-animate">
+
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+<!-- =========================================
+     NOTHING PHONE 4B RCB EDITION SHOWCASE
+========================================= -->
+<!-- =========================================
+     NOTHING PHONE 4B RCB EDITION SHOWCASE
+========================================= -->
+
+<section class="showcase-section rcb-showcase-section">
+
+    <div class="container">
+
+        <!-- SECTION HEADING -->
+
+        <div class="showcase-heading text-center scroll-animate">
+
+            <span class="section-badge rcb-section-badge">
+                LIMITED EDITION
+            </span>
+
+            <h2 class="showcase-main-title">
+                BUILT FOR THE 12TH MAN
+            </h2>
+
+            <p class="showcase-main-subtitle">
+                Bold identity, distinctive design and
+                the spirit of Royal Challengers Bengaluru.
+            </p>
+
+        </div>
+
+
+        <!-- CONTENT -->
+
+        <div class="showcase-content rcb-showcase-content scroll-animate">
+
+            <!-- TEXT -->
+
+            <div class="showcase-text scroll-animate">
+
+                <span class="rcb-edition-label">
+                    RCB × NOTHING
+                </span>
+
+                <h2>
+                    NOTHING PHONE
+                    <br>
+                    (4b)
+                    <br>
+                    RCB EDITION
+                </h2>
+
+                <p>
+                    Bold by design.
+                    Built for the fans.
+                    Made to stand apart.
+
+                    Experience a limited-edition device
+                    inspired by the energy, identity and
+                    passion of Royal Challengers Bengaluru.
+                </p>
+
+                <a href="{% url 'product_detail' 50 %}"
+                   class="shop-btn btn btn-dark rounded-pill">
+
+                    Explore RCB Edition
+
+                </a>
+
+            </div>
+
+
+            <!-- RCB SHORT VIDEO -->
+
+            <div class="rcb-showcase-media scroll-animate">
+
+                <div class="rcb-short-video">
+
+                    <video autoplay muted loop playsinline>
+
+                        <source
+                            src="{% static 'videos/rcb.mp4' %}"
+                            type="video/mp4"
+                        >
+
+                    </video>
+
+                    <div class="rcb-video-overlay"></div>
+
+                    <span class="rcb-video-text">
+                        PLAY BOLD
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+        <!-- END SHOWCASE CONTENT -->
+
+    </div>
+    <!-- END CONTAINER -->
+
+</section>
+
+
+<!-- AURAGLYPH STATS -->
+
+<section class="stats-section">
+
+    <div class="container">
+
+        <div class="text-center scroll-animate">
+
+            <h2 class="stats-title">
+
+                AURAGLYPH IN NUMBERS
+
+            </h2>
+
+            <p class="stats-subtitle">
+
+                A growing ecosystem driven by innovation,
+                transparency and community.
+
+            </p>
+
+        </div>
+
+        <div class="stats-grid">
+
+            <div class="stat-card scroll-animate">
+
+                <span class="stat-label">
+
+                    PRODUCTS
+
+                </span>
+
+                <h3 class="counter"
+                    data-target="50"
+                    data-suffix="+">
+
+                    0
+
+                </h3>
+
+                <p>
+
+                    Premium Devices
+
+                </p>
+
+            </div>
+
+            <div class="stat-card scroll-animate">
+
+                <span class="stat-label">
+
+                    CATEGORIES
+
+                </span>
+
+                <h3 class="counter"
+                    data-target="5"
+                    data-suffix="+">
+
+                    0
+
+                </h3>
+
+                <p>
+
+                    Connected Experiences
+
+                </p>
+
+            </div>
+
+            <div class="stat-card scroll-animate">
+
+                <span class="stat-label">
+
+                    COMMUNITY
+
+                </span>
+
+                <h3 class="counter"
+                    data-target="1000"
+                    data-suffix="+">
+
+                    0
+
+                </h3>
+
+                <p>
+
+                    Active Members
+
+                </p>
+
+            </div>
+
+            <div class="stat-card scroll-animate">
+
+                <span class="stat-label">
+
+                    SATISFACTION
+
+                </span>
+
+                <h3 class="counter"
+                    data-target="99"
+                    data-suffix="%">
+
+                    0
+
+                </h3>
+
+                <p>
+
+                    Positive Feedback
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GLYPH EXPERIENCE -->
+
+<section class="glyph-section">
+
+    <div class="container">
+
+        <div class="glyph-content">
+
+    <div class="glyph-text scroll-animate">
+
+        <h2>
+
+            GLYPH EXPERIENCE
+
+        </h2>
+
+        <p>
+
+            Designed to communicate
+            beyond the screen.
+
+            The Glyph Interface transforms
+            notifications, calls and interactions
+            into a visual language.
+
+        </p>
+
+    </div>
+
+    <div class="glyph-animation scroll-animate">
+
+        <div class="glyph-circle"></div>
+        <div class="glyph-circle"></div>
+        <div class="glyph-circle"></div>
+        <div class="glyph-circle"></div>
+
+    </div>
+
+</div>
+
+    </div>
+
+</section>
+
+
+
+
+
+    {% endblock %}

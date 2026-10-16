@@ -1,0 +1,164 @@
+
+{% extends 'base.html' %}
+{% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/wish.mp4' %}"type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h4 class="glass-box">DESIGNED WITH PURPOSE</h4>
+
+            <p class="glass-box">
+                AURAGLYPH blends futuristic aesthetics, transparent technology,
+    and minimal design philosophy to create a modern shopping
+    experience inspired by Nothing and CMF innovation.
+            </p><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Explore Gallery</a>
+        </div>
+    </section>
+
+    
+
+    <!-- ABOUT -->
+    <section class="about">
+        <div class="container">
+            <div class="about-row">
+                <div class="about-image-wrapper scroll-animate">
+                    <img src="https://cdn.sanity.io/images/gtd4w1cq/production/d2a928661850d77fa8db5489eb53af14990639e8-4096x2305.jpg"
+                        alt="Transparent tech design" class="about-image" />
+                </div>
+                <div class="about-content scroll-animate">
+                    <h2>ABOUT AURAGLYPH</h2>
+                    <p>
+                        AURAGLYPH is a futuristic ecommerce platform inspired by transparent technology, minimalism, and
+                        iconic glyph aesthetics. It is designed for modern tech lovers who value clarity, craftsmanship,
+                        and a refined user experience.
+                    </p>
+                    <p>
+                        We curate collections that blend subtle materials, premium finishes, and bold design language —
+                        from Nothing-inspired hardware to CMF-driven accessories. Every product is chosen to feel fresh,
+                        tactile, and unmistakably modern.
+                    </p>
+                    <ul>
+                        <li class="scroll-animate">Minimal, functional product curation</li>
+                        <li class="scroll-animate">Transparent materials and premium finishes</li>
+                        <li class="scroll-animate">Bold, expressive design for everyday tech</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <!-- 3D PRODUCT GALLERY -->
+<!-- 3D PRODUCT GALLERY -->
+
+<section class="gallery-section" id="collection">
+
+    <div class="container">
+
+        <h2 class="gallery-title">NOTHING GALLERY</h2>
+
+        <div class="slider">
+
+            <div class="item" style="--position:1">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-White_4382eef5-d1be-4128-b861-d36501f0c89d.png?v=1750839188" alt="">
+            </div>
+
+            <div class="item" style="--position:2">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Arbok-Primary-White.png?v=1750839180" alt="">
+            </div>
+
+            <div class="item" style="--position:3">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Black.png?v=1772251226" alt="">
+            </div>
+
+            <div class="item" style="--position:4">
+                <img src="https://cdn.shopify.com/s/files/1/0585/2479/5086/files/Ear3-white_9c7c5465-3f29-4bb9-a438-7883444a6bad.png?v=1758101856" alt="">
+            </div>
+
+            <div class="item" style="--position:5">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pro-White.png?v=1772251228" alt="">
+            </div>
+
+            <div class="item" style="--position:6">
+                <img src="https://lmt-web.mstatic.lv/eshop/33015/6-nothing-phone-3a-pro-black.png" alt="">
+            </div>
+
+            <div class="item" style="--position:7">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Primary-Phone-3a-Community-Editon.png?v=1764905578" alt="">
+            </div>
+
+            <div class="item" style="--position:8">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/BulbT-White.png?v=1761642504" alt="">
+            </div>
+
+            <div class="item" style="--position:9">
+                <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone-4a-Pink.png?v=1772251226" alt="">
+            </div>
+
+            <div class="item" style="--position:10">
+                <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/07/nothing-phone-2-render.png" alt="">
+            </div>
+
+        </div> <!-- slider -->
+
+    </div> <!-- container -->
+
+</section>
+
+
+<!-- OUR PHILOSOPHY SECTION -->
+
+<section class="philosophy-section">
+
+    <div class="container">
+
+        <div class="philosophy-box">
+
+            <!-- IMAGE -->
+
+            <div class="philosophy-image-wrapper">
+
+                <img 
+                    src="https://odishaconnect.com/wp-content/uploads/2026/03/carl-pei.jpg"
+                    alt="Transparent Tech Design"
+                    class="philosophy-image"
+                >
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <h2 class="philosophy-title">OUR PHILOSOPHY</h2>
+
+            <p class="philosophy-text">
+                At AURAGLYPH, we believe technology should feel more than functional.
+                It should feel expressive, minimal, and emotionally connected.
+                Inspired by transparent design and futuristic aesthetics,
+                we focus on creating an experience that is clean, immersive,
+                and visually distinctive.
+            </p>
+
+            <h4 class="philosophy-quote">
+                "Designed for clarity. Built for identity."
+            </h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+   {% endblock %}

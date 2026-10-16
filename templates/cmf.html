@@ -1,0 +1,219 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/cmf.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="glass-box">CMF PRODUCTS</h1>
+            <p class="glass-box">
+                Innovative solutions with cutting-edge technology and sleek design.
+            </p><br><br><br><br><br><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Explore CMF Products</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">CMF Collections</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 13 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/2048x1352BuyPage-GreenPhone-1_97a112c0-e7d8-4499-adb0-f1b4dc589ca4.png?v=1745489660"
+                            class="card-img-top" alt="Wireless Earbuds">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Phone 1</h5>
+                            <p class="card-text">Experience premium sound quality with the CMF Phone 1, designed for audiophiles who demand the best.</p>
+                            <a href="{% url 'product_detail' 13 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 13 %}"class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 14 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2Pro-1352x1352-Orange-Back.png?v=1745661990"
+                            class="card-img-top" alt="Over-Ear Headphones">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Phone 2 Pro</h5>
+                            <p class="card-text">The CMF Phone 2 Pro delivers an immersive audio experience with its advanced sound technology.</p>
+                            <a href="{% url 'product_detail' 14 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 14 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 15 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Card_Stand2_-_1352_x_1352_-_Orange_314553fb-b97f-490b-bd78-7436a0bc2c0f.png?v=1745759934"
+                            class="card-img-top" alt="Bluetooth Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Card Stand</h5>
+                            <p class="card-text">A sleek and functional stand for holding your CMF Card, designed for convenience and style.</p>
+                            <a href="{% url 'product_detail' 15 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 15 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 16 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://xmartifydubai.com/wp-content/uploads/2024/01/Global-Version-CMF-by-Nothing-Watch-Pro-1-96-AMOLED-Bluetooth-5-3-BT-Calls-with.png_640x640-2.webp"
+                            class="card-img-top" alt="CMF by Nothing Watch Pro">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF by Nothing Watch Pro</h5>
+                            <p class="card-text">Smart simplicity with a bold rectangular AMOLED display, smooth Bluetooth calling, and everyday fitness tracking.</p>
+                            <a href="{% url 'product_detail' 16 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 16 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 17 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Watch-Pro-2_Orange_1.png?v=1745489716"
+                            class="card-img-top" alt="CMF by Nothing Watch Pro 2">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF by Nothing Watch Pro 2</h5>
+                            <p class="card-text">A refined smartwatch with a premium circular design, customizable bezels, AMOLED brilliance, and seamless daily performance.
+                            </p>
+                            <a href="{% url 'product_detail' 17 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 17 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 18 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0043_CMF-Watch-3-Pro-Orange.png?v=1753757329"
+                            class="card-img-top" alt="CMF by Nothing Watch 3 Pro">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF by Nothing Watch Pro 3</h5>
+                            <p class="card-text">The next generation of CMF smartwatches featuring advanced health sensors, dual-band GPS, enhanced battery life, and a futuristic design.</p>
+                            <a href="{% url 'product_detail' 18 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 18 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 19 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF_Headphone1-light-grey.png?v=1758799659"
+                            class="card-img-top" alt="Bluetooth Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Headphone Pro</h5>
+                            <p class="card-text">Portable speaker with deep bass and clear treble, perfect for on-the-go
+                                listening.</p>
+                            <a href="{% url 'product_detail' 19 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 19 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 20 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cmf.com.ru/uploads/product/buds-pro/ii/tws-white_1200x.png"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds Pro</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 20 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 20 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate"> 
+                        <a href="{% url 'add_to_wishlist' 21 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Buds2-1352x1352-LightGreen-Open_e619331e-feb6-4bc6-8542-83d2db418aeb.png?v=1753437813"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 21 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 21 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 22 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMFBuds2a-1352x1352-LightGrey-Open_eefdd1b1-abda-4007-ace7-e648a9df9d42.png?v=1745662014"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2a</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 22 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 22 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 23 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0071_CMF-Buds-Pro-2-case-blue.png?v=1753757335"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2 Plus</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 23 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 23 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 24 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_1.png?v=1745489690"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds Pro 2</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 24 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 24 %}" class="add-cart-btn rounded-pill w-100" >🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+   {% endblock %}

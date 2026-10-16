@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/nothing2.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="glass-box">PREMIUM PHONES</h1>
+            <p class="glass-box">
+                Experience nothing phones and CMF devices with cutting-edge technology and transparent design.
+            </p><br><br><br><br><br><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Explore Phones</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">Our Nothing Phone Collections</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 50 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://assets.hmtvlive.com/h-upload/2026/07/06/429492-nothing-phone-4b.webp"
+                            class="card-img-top" alt="rcb edition">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone 4b RCB Edition</h5>
+                            <p class="card-text">A limited matte-red variant of the Phone (4b), made with Royal Challengers Bengaluru, same specs as the standard model. </p>
+                            <a href="{% url 'product_detail' 50 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 50 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 1 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://www.androidheadlines.com/wp-content/uploads/2025/06/exclusive-nothing-phone-3-leak-AH-01-1420x799.webp"
+                            class="card-img-top" alt="Nothing Phone 3">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone 3</h5>
+                            <p class="card-text">Nothing’s most advanced smartphone yet — intelligent AI features, an evolved Glyph Interface, and a refined transparent design built for future.</p>
+                            <a href="{% url 'product_detail' 1 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 1 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 2 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/c4f8412c90aa13e1873d41121df3f3a666adda9f-4096x2305.jpg?auto=format"
+                            class="card-img-top" alt="CMF Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (4a) Pro</h5>
+                            <p class="card-text">A premium upgrade featuring advanced cameras, intelligent performance, and a refined transparent aesthetic crafted for power users.</p>
+                            <a href="{% url 'product_detail' 2 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 2 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 3 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/aed5f596bd5a8fafc46aafd991f84010e3699f49-4096x2305.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (4a)</h5>
+                            <p class="card-text">Built for smooth everyday performance with a clean transparent design, immersive visuals, and the signature Nothing experience.</p>
+                            <a href="{% url 'product_detail' 3 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 3 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 4 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/ArcPro1352x1352-Black-Glyphon.png?v=1740649967"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (3a) Pro</h5>
+                            <p class="card-text">Advanced camera technology, premium craftsmanship, and powerful performance in Nothing’s bold transparent design language.</p>
+                            <a href="{% url 'product_detail' 4 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 4 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 5 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://smartkoshk.com/cdn/shop/files/Arc1352x1352-White-Frontback_4bf64fc6-ec1e-4f28-806b-f8fb9f5ef393.webp?v=1746501683"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (3a)</h5>
+                            <p class="card-text">Smart performance and signature aesthetics combined with AI-powered features and a refined user experience and features.</p>
+                            <a href="{% url 'product_detail' 5 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 5 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 6 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/1d634ef8b88b0adaa4413a5f265e4c622efd285a-768x577.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone(3a)Special Edition</h5>
+                            <p class="card-text">Inspired by the Nothing community — blending creativity, personalization, and futuristic design into a unique limited-edition experience.</p>
+                            <a href="{% url 'product_detail' 6 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 6 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                 <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 7 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/ac70f1497b4a041b5e1e0ca650627f5f8aeb160d-1536x1153.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (3a) Lite</h5>
+                            <p class="card-text">A lightweight take on the Nothing experience with essential performance, clean software, and the brand’s signature minimalist design.</p>
+                            <a href="{% url 'product_detail' 7 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 7 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 8 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://images.financialexpressdigital.com/2024/04/NOTHING-PHONE-2A-MILK.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (2a)</h5>
+                            <p class="card-text">Designed for everyday creativity with an iconic transparent look, immersive AMOLED display, and optimized battery life.</p>
+                            <a href="{% url 'product_detail' 8 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 8 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 9 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/Phone2aplus-black-1_1352x1352_90623ece-3c29-4889-8294-a34fc4641742.png?v=1737466608"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone (2a) Plus</h5>
+                            <p class="card-text">Enhanced speed, sharper cameras, and a more capable experience built for the next generation of creators and immersive AMOLED display.</p>
+                            <a href="{% url 'product_detail' 9 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 9 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 10 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.mos.cms.futurecdn.net/MY88tPtSQ9D7dxdCet3jxa.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone(2a)Special Edition</h5>
+                            <p class="card-text">A bold reinterpretation of the Phone (2a) with exclusive colors, expressive details, and the same smooth Nothing experience.</p>
+                            <a href="{% url 'product_detail' 10 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 10 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 11 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://emtelmobiles.com/wp-content/uploads/2023/12/6-1.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone 2</h5>
+                            <p class="card-text">A more powerful evolution with flagship-level performance, refined Glyph lighting, and a smoother Nothing experience.</p>
+                            <a href="{% url 'product_detail' 11 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 11 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 12 %}" class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://www.notebookcheck.net/fileadmin/Notebooks/Nothing/Phone_1/4_zu_3_Nothing_Phone_1.jpg"
+                            class="card-img-top" alt="Nothing Phone 1">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Phone 1</h5>
+                            <p class="card-text">The device that introduced transparent design and the iconic Glyph Interface, redefining how smartphones look and feel.</p>
+                            <a href="{% url 'product_detail' 12 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 12 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+   {% endblock %}

@@ -1,0 +1,170 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/access.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="glass-box">TECH ACCESSORIES</h1>
+            <p class="glass-box">
+                Explore premium cases, chargers, and accessories designed for Nothing and CMF devices.
+            </p><br><br><br><br><br><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Explore Accessories</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">Accessory Collection</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 25 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/products/case.png?v=1753759828"
+                            class="card-img-top" alt="Transparent Phone Case">
+                        <div class="card-body">
+                            <h5 class="card-title">Transparent Phone Case (2a)</h5>
+                            <p class="card-text">Showcase your device with our minimal transparent protective case.</p>
+                            <a href="{% url 'product_detail' 25 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 25 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 26 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0006_Phone-3a-case.png?v=1753759050"
+                            class="card-img-top" alt="Portable Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">Transparent Phone Case (3a)</h5>
+                            <p class="card-text">Showcase your device with our minimal transparent protective case.</p>
+                            <a href="{% url 'product_detail' 26 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 26 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 27 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0005_Phone-3a-Pro-case.png?v=1753758998"
+                            class="card-img-top" alt="Portable Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">Transparent Phone Case (3a pro)</h5>
+                            <p class="card-text">Showcase your device with our minimal transparent protective case.</p>
+                            <a href="{% url 'product_detail' 27 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 27 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 28 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://tm-prd-cdn.themarket.co.nz/resizer/view?key=1e5f279fae6ccc4a7e981e93cea10c2a&b=productimages&w=1080&h=1080"
+                            class="card-img-top" alt="Portable Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">Transparent Phone Case (phone 3)</h5>
+                            <p class="card-text">Showcase your device with our minimal transparent protective case.</p>
+                            <a href="{% url 'product_detail' 28 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 28 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 29 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Adapter_-_1352_x_1352.png?v=1745671316"
+                            class="card-img-top" alt="Portable Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Phone 2 pro Universal Cover</h5>
+                            <p class="card-text">Showcase your device with our minimal transparent protective case.</p>
+                            <a href="{% url 'product_detail' 29 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 29 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 30 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://images.price.tools/images/cmf-nothing-original-45w-fast-charger-l-ySHv9NoK2.jpg"
+                            class="card-img-top" alt="Wireless Charger">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Fast Charger 45W</h5>
+                            <p class="card-text">Fast charging with a sleek, modern design that complements any space.
+                            </p>
+                            <a href="{% url 'product_detail' 30 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 30 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 31 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://m.media-amazon.com/images/I/61S9yj8-ucL.jpg"
+                            class="card-img-top" alt="USB-C Cable">
+                        <div class="card-body">
+                            <h5 class="card-title">Premium USB-C Cable</h5>
+                            <p class="card-text">Durable and fast-charging cable with minimalist design and
+                                transparency.</p>
+                            <a href="{% url 'product_detail' 31 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 31 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 32 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://wrafer.com/images/products/56472_phone%201.jpg"
+                            class="card-img-top" alt="Screen Protector">
+                        <div class="card-body">
+                            <h5 class="card-title">Tempered Glass Protector</h5>
+                            <p class="card-text">Crystal-clear protection that preserves the beauty of your display.</p>
+                            <a href="{% url 'product_detail' 32 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 32 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 33 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/0000s_0052_CMF-Power-65-_UK.png?v=1753439058"
+                            class="card-img-top" alt="Phone Mount">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Power Charger 65W</h5>
+                            <p class="card-text">High-performance charging solution with a sleek, modern design.</p>
+                            <a href="{% url 'product_detail' 33 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 33 %}"class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+   {% endblock %}

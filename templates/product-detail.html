@@ -1,0 +1,313 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    
+
+    <!-- PRODUCT OVERVIEW -->
+
+<section class="about product-overview-section">
+
+    <div class="container">
+
+        <div class="about-row">
+
+            <!-- IMAGE -->
+
+            <div class="about-image-wrapper scroll-animate">
+
+                <img
+                    src="{{ product.image.url }}"
+                    alt="{{ product.name }}"
+                    class="about-image"
+                >
+
+            </div>
+
+            <!-- CONTENT -->
+
+            <div class="about-content scroll-animate">
+
+                <h2>{{ product.name }}</h2>
+                
+                <p>
+    {{ product.description }}
+</p>
+
+            
+
+                <!-- PRICE -->
+
+                <div class="product-price">
+
+                    ₹{{ product.price }}
+
+                </div>
+
+                {% if product.vendor %}
+
+<p class="product-vendor">
+
+    Sold By:
+    {{ product.vendor.name }}
+
+</p>
+
+{% endif %}
+
+                    <p class="stock-text">
+    In Stock : {{ product.stock }}
+</p>
+                <!-- BUTTONS -->
+
+                <div class="product-buttons">
+
+                    <a href="{% url 'buy_now' product.id %}"
+   class="btn btn-dark rounded-pill px-4">
+   Buy Now
+</a>
+
+                    <a href="{% url 'add_to_cart' product.id %}"
+   class="btn btn-dark btn-sm rounded-pill">
+   🛒 Add To Cart
+</a>
+
+
+                
+
+                <!-- FEATURES
+
+                <ul>
+
+                    <li class="scroll-animate">
+                        1.43” AMOLED Display
+                    </li>
+
+                    <li class="scroll-animate">
+                        Bluetooth Calling Support
+                    </li>
+
+                    <li class="scroll-animate">
+                        13-Day Battery Life
+                    </li>
+
+                    <li class="scroll-animate">
+                        IP68 Water Resistance
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+
+
+
+<!-- SPECIFICATIONS -->
+
+<!-- <section class="products specs-section">
+
+    <div class="container">
+
+        <h2 class="scroll-animate">
+            SPECIFICATIONS
+        </h2>
+
+        <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+
+            <div class="col">
+
+                <div class="card h-100 scroll-animate">
+
+                    <div class="card-light"></div>
+
+                    <div class="spec-card-content">
+
+                        <h3>DISPLAY</h3>
+
+                        <p>
+                            1.43” AMOLED
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="card h-100 scroll-animate">
+
+                    <div class="card-light"></div>
+
+                    <div class="spec-card-content">
+
+                        <h3>BATTERY</h3>
+
+                        <p>
+                            13 Days Usage
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="card h-100 scroll-animate">
+
+                    <div class="card-light"></div>
+
+                    <div class="spec-card-content">
+
+                        <h3>CONNECTIVITY</h3>
+
+                        <p>
+                            Bluetooth Calling
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="col">
+
+                <div class="card h-100 scroll-animate">
+
+                    <div class="card-light"></div>
+
+                    <div class="spec-card-content">
+
+                        <h3>WATERPROOF</h3>
+
+                        <p>
+                            IP68 Rated
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section> -->
+
+
+
+
+
+<!-- EXPERIENCE SECTION -->
+
+<!-- <section class="philosophy-section">
+
+    <div class="container">
+
+        <div class="philosophy-box">
+
+            <div class="philosophy-image-wrapper">
+
+                <img
+                    src="https://st.gsmarena.com/imgroot/news/24/07/cmf-watch-pro-2-buds-pro-2-ofic/inline/-1200/gsmarena_004.jpg"
+                    alt=""
+                    class="philosophy-image"
+                >
+
+            </div>
+
+            <h2 class="philosophy-title">
+                DESIGNED FOR MOTION
+            </h2> -->
+
+            <!-- <p class="philosophy-text">
+
+                Watch Pro 2 is crafted for modern lifestyles,
+                blending expressive aesthetics, precision engineering,
+                and immersive wearable experiences into one seamless form.
+
+            </p> -->
+
+            <!-- <h4 class="philosophy-quote">
+
+                "Minimal outside. Powerful inside."
+
+            </h4>
+
+        </div>
+
+    </div>
+
+</section> -->
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<section class="recommend-section">
+
+    <div class="container">
+
+        <div class="recommend-header">
+
+            <h2>
+
+                You May Also Like
+
+            </h2>
+
+            <p>
+
+                AI-powered recommendations based on similar products.
+
+            </p>
+
+        </div>
+
+        <div class="recommend-grid">
+
+            {% for product in recommended_products %}
+
+            <div class="recommend-card">
+
+                <img src="{{ product.image.url }}">
+
+                <h5>{{ product.name }}</h5>
+
+                <p>₹{{ product.price }}</p>
+
+                <a href="{% url 'product_detail' product.id %}"
+                   class="btn btn-dark">
+
+                    View Product
+
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}

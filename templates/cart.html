@@ -1,0 +1,217 @@
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+
+<section class="hero">
+
+    <video class="hero-video"
+        autoplay
+        muted
+        loop
+        playsinline>
+
+        <source src="{% static 'videos/cart.mp4' %}" type="video/mp4">
+
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-dots"></div>
+
+    <div class="container hero-content text-center">
+
+        <h4 class="glass-box">
+            YOUR CART
+        </h4>
+
+        <p class="glass-box">
+            Review your selected products and continue your futuristic
+            shopping experience with AURAGLYPH.
+        </p>
+
+        <a href="#cart-section"
+            class="shop-btn btn btn-dark rounded-pill">
+
+            View Cart
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- CART SECTION -->
+
+<section class="cart-section products"
+    id="cart-section">
+
+    <div class="container">
+
+        <h2 class="scroll-animate">
+            CART ITEMS
+        </h2>
+
+        <div class="cart-layout">
+
+            <!-- LEFT SIDE -->
+             <div class="cart-items">
+
+            {% for item in cart_items %}
+
+<div class="cart-item scroll-animate">
+
+    <div class="cart-image-wrapper">
+
+        <img src="{{ item.product.image.url }}"
+            alt="{{ item.product.name }}"
+            class="cart-image">
+
+    </div>
+
+    <div class="cart-details">
+
+        <h3>
+            {{ item.product.name }}
+        </h3>
+
+        <p>
+            {{ item.product.description|truncatewords:6 }}
+        </p>
+
+        <div class="cart-price">
+            ₹{{ item.product.price }}
+        </div>
+
+    </div>
+
+    <div class="cart-actions">
+
+        <input type="number"
+            value="{{ item.quantity }}"
+            min="1"
+            class="quantity-input">
+
+        <a href="{% url 'remove_from_cart' item.id %}"
+   class="remove-cart-btn">
+
+    Remove
+
+</a>
+
+    </div>
+
+</div>
+
+{% empty %}
+
+<h3 class="glass-box text-center">
+
+    Your cart is empty
+
+</h3>
+
+{% endfor %}
+</div>
+
+
+
+
+
+            <!-- RIGHT SIDE -->
+
+            <div class="cart-summary scroll-animate">
+
+                <h3>
+                    ORDER SUMMARY
+                </h3>
+
+                <div class="summary-row">
+
+                    <span>Subtotal</span>
+
+                    <span>₹{{ total }}</span>
+
+                </div>
+
+                <div class="summary-row">
+
+                    <span>Shipping</span>
+
+                    <span>Free</span>
+
+                </div>
+
+                <div class="summary-row total-row">
+
+                    <span>Total</span>
+
+                    <span>₹{{ total }}</span>
+
+                </div>
+
+                <a href="{% url 'checkout' %}#checkout-section"
+   class="btn btn-dark rounded-pill w-100">
+
+    Proceed To Checkout
+
+</a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- EMPTY STATE -->
+
+<section class="philosophy-section">
+
+    <div class="container">
+
+        <div class="philosophy-box">
+
+            <div class="philosophy-image-wrapper">
+
+                <img src="https://cdn.nothing.community/2026-02-03/1770101537-307262-20260203-122018.jpg"
+                    class="philosophy-image">
+
+            </div>
+
+            <h2 class="philosophy-title">
+
+                READY TO EXPERIENCE MORE?
+
+            </h2>
+
+            <p class="philosophy-text">
+
+                Continue exploring futuristic products and
+                build your own premium transparent ecosystem.
+
+            </p>
+
+            <h4 class="philosophy-quote">
+
+                "Technology curated for identity."
+
+            </h4>
+
+        </div>
+
+    </div>
+
+</section>
+
+   {% endblock %}

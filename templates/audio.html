@@ -1,0 +1,242 @@
+
+{% extends 'base.html' %}
+    {% load static %}
+    {% block content %}
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <video class="hero-video" autoplay muted loop playsinline>
+            <source src="{% static 'videos/ear.mp4' %}" type="video/mp4">
+        </video>
+        <div class="hero-overlay"></div>
+        <div class="hero-dots"></div>
+
+        <div class="container hero-content text-center">
+            <h1 class="glass-box">AUDIO EXCELLENCE</h1>
+            <p class="glass-box">
+                Premium headphones and speakers with transparent design and immersive sound quality.
+            </p><br><br><br><br><br><br>
+            <a href="#collection" class="shop-btn btn btn-dark rounded-pill">Explore Audio</a>
+        </div>
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="products" id="collection">
+        <div class="container">
+            <h2 class="scroll-animate">Audio Collection</h2>
+            <div class="product-grid row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4">
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 34 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/e46a5dce8b323b3601995bb54dc8d818cab0b7bf-4096x2305.jpg"
+                            class="card-img-top" alt="Wireless Earbuds">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Headphone (1)</h5>
+                            <p class="card-text">Premium sound quality with active noise cancellation and transparent
+                                design.</p>
+                            <a href="{% url 'product_detail' 34 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 34 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 35 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.sanity.io/images/gtd4w1cq/production/7db7765f1fa2856115f9762fac162e98be9caa44-4096x2305.jpg"
+                            class="card-img-top" alt="Over-Ear Headphones">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Headphone (a)</h5>
+                            <p class="card-text">Studio-quality sound with comfortable design and minimalist aesthetic design.
+                            </p>
+                            <a href="{% url 'product_detail' 35 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 35 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 36 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF_Headphone1-light-grey.png?v=1758799659"
+                            class="card-img-top" alt="Bluetooth Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Headphone Pro</h5>
+                            <p class="card-text">Portable speaker with deep bass and clear treble, perfect for on-the-go
+                                listening.</p>
+                            <a href="{% url 'product_detail' 36 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 36 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 37 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0026_Ear-a-white.png?v=1753757354"
+                            class="card-img-top" alt="Smart Speaker">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Ear (a)</h5>
+                            <p class="card-text">Voice-controlled speaker with immersive sound and seamless
+                                connectivity.</p>
+                            <a href="{% url 'product_detail' 37 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 37 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 38 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0028_Ear-_open_-white.png?v=1753759514"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Ear (open)</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 38 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 38 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 39 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/products/20211111-150317.png?v=1658476010"
+                            class="card-img-top" alt="Audio Cable">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Ear (1)</h5>
+                            <p class="card-text">High-fidelity audio cable with gold-plated connectors and minimal noise
+                                interference.</p>
+                            <a href="{% url 'product_detail' 39 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 39 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 40 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://static0.xdaimages.com/wordpress/wp-content/uploads/2023/03/frnu6jkwwaakdc2-removebg-preview.png?q=50&fit=contain&w=420&dpr=1.5"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Ear (2)</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 40 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 40 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 41 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0579/8091/1768/files/Ear3-white_9c7c5465-3f29-4bb9-a438-7883444a6bad.png?v=1758098076"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">Nothing Ear (3)</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 41 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 41 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 42 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cmf.com.ru/uploads/product/buds-pro/ii/tws-white_1200x.png"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds Pro</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 42 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 42 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 43 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0376/5420/0459/files/Buds2-1352x1352-LightGreen-Open_e619331e-feb6-4bc6-8542-83d2db418aeb.png?v=1753437813"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 43 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 43 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 44 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMFBuds2a-1352x1352-LightGrey-Open_eefdd1b1-abda-4007-ace7-e648a9df9d42.png?v=1745662014"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2a</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 44 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 44 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 45 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/0000s_0071_CMF-Buds-Pro-2-case-blue.png?v=1753757335"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds 2 Plus</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 45 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 45 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col">
+                    <div class="card h-100 scroll-animate">
+                        <a href="{% url 'add_to_wishlist' 46 %}"class="wishlist-icon">♡</a>
+                        <div class="card-light"></div>
+                        <img src="https://cdn.shopify.com/s/files/1/0586/3270/0077/files/CMF-Buds-Pro-2_Orange_1.png?v=1745489690"
+                            class="card-img-top" alt="In-Ear Monitor">
+                        <div class="card-body">
+                            <h5 class="card-title">CMF Buds Pro 2</h5>
+                            <p class="card-text">Audiophile-grade in-ear monitors with exceptional clarity and detailed
+                                sound.</p>
+                            <a href="{% url 'product_detail' 46 %}" class="btn btn-outline-dark rounded-pill w-100">Explore Product</a>
+                            <a href="{% url 'add_to_cart' 46 %}" class="add-cart-btn rounded-pill w-100">🛒 Add To Cart</a>
+                        </div>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+   {% endblock %}

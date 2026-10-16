@@ -1,0 +1,102 @@
+```django id="c0c0hc"
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<section class="auth-section">
+
+    <!-- DOTTED BACKGROUND -->
+
+    <div class="hero-dots"></div>
+
+
+
+
+
+    <!-- AUTH CARD -->
+
+    <div class="container auth-container">
+
+        <div class="auth-card scroll-animate">
+
+            <h2 class="glass-box auth-title">
+                CREATE ACCOUNT
+            </h2>
+
+            <p class="glass-box auth-subtitle">
+                Join the AURAGLYPH futuristic ecosystem.
+            </p>
+
+           
+{% if error %}
+
+<p class="auth-error">
+
+    {{ error }}
+
+</p>
+
+{% endif %}
+
+
+
+
+
+
+            <!-- FORM -->
+
+            <form method="POST"
+                class="auth-form">
+
+                {% csrf_token %}
+
+                <input type="text"
+                    name="username"
+                    placeholder="Username"
+                    required>
+
+                <input type="email"
+                    name="email"
+                    placeholder="Email Address"
+                    required>
+
+                <input type="password"
+                    name="password"
+                    placeholder="Password"
+                    required>
+
+                <button type="submit"
+                    class="shop-btn btn btn-dark rounded-pill">
+
+                    Register
+
+                </button>
+
+            </form>
+
+
+
+
+
+            <!-- SWITCH -->
+
+            <p class="auth-switch">
+
+                Already have an account?
+
+                <a href="{% url 'login' %}">
+
+                    Login
+
+                </a>
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+{% endblock %}
+```

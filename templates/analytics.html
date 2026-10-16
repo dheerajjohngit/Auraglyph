@@ -1,0 +1,715 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="analytics-section">
+
+    <div class="container">
+
+        <div class="text-center">
+
+            <h1>
+
+                Analytics Dashboard
+
+            </h1>
+
+            <p>
+
+                Business insights and performance metrics
+
+            </p>
+
+        </div>
+
+        <div class="analytics-grid">
+
+            <div class="analytics-card">
+
+                <h2>
+
+                    {{ total_users }}
+
+                </h2>
+
+                <p>
+
+                    Total Users
+
+                </p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h2>
+
+                    {{ total_orders }}
+
+                </h2>
+
+                <p>
+
+                    Total Orders
+
+                </p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h2>
+
+                    ₹{{ total_revenue }}
+
+                </h2>
+
+                <p>
+
+                    Revenue
+
+                </p>
+
+            </div>
+
+            <div class="analytics-card">
+
+                <h2>
+
+                    ₹{{ average_order_value }}
+
+                </h2>
+
+                <p>
+
+                    Average Order Value
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+<!-- CUSTOMER SEGMENTS -->
+
+<div class="segment-section">
+
+    <h2>
+
+        Customer Segments
+
+    </h2>
+
+    <div class="analytics-grid">
+
+        <div class="analytics-card">
+
+            <h2>
+
+                👑
+
+            </h2>
+
+            <h3>
+
+                {{ high_value_customers }}
+
+            </h3>
+
+            <p>
+
+                High Value Customers
+
+            </p>
+
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h2>
+
+                🛒
+
+            </h2>
+
+            <h3>
+
+                {{ regular_customers }}
+
+            </h3>
+
+            <p>
+
+                Regular Customers
+
+            </p>
+
+        </div>
+
+        <div class="analytics-card">
+
+            <h2>
+
+                🌱
+
+            </h2>
+
+            <h3>
+
+                {{ new_customers }}
+
+            </h3>
+
+            <p>
+
+                New Customers
+
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CATEGORY DISTRIBUTION -->
+
+<div class="segment-section">
+
+    <h2>
+
+        Product Category Distribution
+
+    </h2>
+
+    <div class="analytics-grid">
+
+        {% for category, count in category_data.items %}
+
+        <div class="analytics-card">
+
+            <h2>
+
+                {{ count }}
+
+            </h2>
+
+            <p>
+
+                {{ category }}
+
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+<section class="analytics-section">
+
+    <div class="analytics-card">
+
+        <h2>
+
+            ₹{{ forecasted_sales }}
+
+        </h2>
+
+        <p>
+
+            Predicted Next Month Revenue
+
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="chart-section">
+
+    <div class="analytics-card chart-card">
+
+        <h2>
+
+            Product Distribution Chart
+
+        </h2>
+
+        <canvas id="categoryChart"></canvas>
+
+    </div>
+
+</section>
+
+<section class="chart-section">
+
+    <div class="analytics-card chart-card">
+
+        <h2>
+
+            Revenue Trend Analysis
+
+        </h2>
+
+        <canvas id="revenueChart"></canvas>
+
+    </div>
+
+</section>
+
+
+<section class="chart-section">
+
+    <div class="analytics-card chart-card">
+
+        <h2>
+
+            AI Sales Forecast (3D)
+
+        </h2>
+
+        <div id="forecast3d"
+             style="width:100%;height:500px;">
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="analytics-section">
+
+    <div class="top-products-card">
+
+        <h2>Top Selling Products</h2>
+
+        <div class="top-products-list">
+
+            {% for product in top_products %}
+
+            <div class="product-rank">
+
+                <div class="rank-badge">
+                    #{{ forloop.counter }}
+                </div>
+
+                <div class="product-info">
+                    <h4>{{ product.product__name }}</h4>
+                </div>
+
+                <div class="sales-badge">
+                    {{ product.total_sales }} Sales
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="analytics-section">
+
+    <div class="top-products-card">
+
+        <h2>
+
+            AI Value For Money Analysis
+
+        </h2>
+
+        <div class="top-products-list">
+
+            {% for product in vfm_products %}
+
+            <div class="product-rank">
+
+                <div class="rank-badge">
+
+                    {{ product.score }}
+
+                </div>
+
+                <div class="product-info">
+
+                    <h4>
+
+                        {{ product.name }}
+
+                    </h4>
+
+                </div>
+
+                <div class="sales-badge">
+
+                    {{ product.prediction }}
+
+                </div>
+
+            </div>
+
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+{{ chart_labels|json_script:"chart-labels" }}
+{{ chart_values|json_script:"chart-values" }}
+{{ revenue_labels|json_script:"revenue-labels" }}
+
+{{ revenue_values|json_script:"revenue-values" }}
+{{ forecasted_sales|json_script:"forecast-value" }}
+
+<script>
+
+const labels = JSON.parse(
+    document.getElementById('chart-labels').textContent
+);
+
+const values = JSON.parse(
+    document.getElementById('chart-values').textContent
+);
+
+const ctx = document.getElementById('categoryChart');
+new Chart(ctx, {
+
+    type: 'doughnut',
+
+    data: {
+
+        labels: labels,
+
+        datasets: [{
+
+            data: values,
+
+            backgroundColor: [
+
+                '#00E5FF',
+                '#FF4D6D',
+                '#FFD166',
+                '#06D6A0',
+                '#7B61FF'
+
+            ],
+
+            borderWidth: 4,
+
+            hoverOffset: 35
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        cutout: '55%',
+
+        animation: {
+
+            animateRotate: true,
+
+            animateScale: true,
+
+            duration: 2500
+        },
+
+        plugins: {
+
+            legend: {
+
+                position: 'bottom'
+            }
+        }
+    }
+});
+
+</script>
+
+
+
+<script>
+
+const revenueLabels = JSON.parse(
+    document.getElementById(
+        'revenue-labels'
+    ).textContent
+);
+
+const revenueValues = JSON.parse(
+    document.getElementById(
+        'revenue-values'
+    ).textContent
+);
+
+const revenueCtx =
+document.getElementById(
+    'revenueChart'
+);
+const revenueChart =new Chart(revenueCtx, {
+
+    type: 'line',
+
+    data: {
+
+        labels: revenueLabels,
+
+        datasets: [{
+
+            label: 'Revenue',
+
+            data: revenueValues,
+
+            fill: true,
+
+            borderWidth: 5,
+
+            pointRadius: 8,
+
+            pointHoverRadius: 14,
+
+            tension: 0.4,
+
+            backgroundColor:
+            'rgba(0, 229, 255, 0.25)',
+
+            borderColor:
+            '#00E5FF'
+        }]
+    },
+
+    options: {
+
+        responsive: true,
+
+        interaction: {
+
+            intersect: false,
+
+            mode: 'index'
+        },
+
+        animations: {
+
+            tension: {
+
+                duration: 1800,
+
+                easing: 'easeInOutSine',
+
+                from: 0.8,
+
+                to: 0.2,
+
+                loop: true
+            }
+        },
+
+        plugins: {
+
+            legend: {
+
+                labels: {
+
+                    font: {
+
+                        size: 14
+                    }
+                }
+            }
+        }
+    }
+});
+setInterval(() => {
+
+    revenueChart.update();
+
+}, 2000);
+</script>
+
+<script>
+
+const forecastData = [{
+
+    type: 'scatter3d',
+
+    mode: 'lines+markers',
+
+    x: [
+
+        'Jan',
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun'
+
+    ],
+
+    y: [
+
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+
+    ],
+
+    z: [
+
+        12000,
+        18000,
+        25000,
+        35000,
+        42000,
+        52000
+
+    ],
+
+    marker: {
+
+        size: 12,
+
+        color: '#00e5ff'
+
+    },
+
+    line: {
+
+        width: 10,
+
+        color: '#00e5ff'
+
+    }
+
+}];
+
+
+const layout = {
+
+    title: 'Interactive Sales Forecast',
+
+    paper_bgcolor: 'rgba(0,0,0,0)',
+
+    plot_bgcolor: 'rgba(0,0,0,0)',
+
+    scene: {
+
+        xaxis: {
+
+            title: 'Month'
+
+        },
+
+        yaxis: {
+
+            title: 'Timeline'
+
+        },
+
+        zaxis: {
+
+            title: 'Revenue ₹'
+
+        },
+
+        camera: {
+
+            eye: {
+
+                x: 1.8,
+
+                y: 1.8,
+
+                z: 1.2
+
+            }
+
+        }
+
+    },
+
+    margin: {
+
+        l:0,
+        r:0,
+        b:0,
+        t:50
+
+    }
+
+};
+
+Plotly.newPlot(
+
+    'forecast3d',
+
+    forecastData,
+
+    layout,
+
+    {
+
+        responsive: true,
+
+        displayModeBar: false
+
+    }
+
+);
+
+let angle = 0;
+
+setInterval(() => {
+
+    angle += 2;
+
+    Plotly.relayout('categoryChart3d', {
+
+        'scene.camera.eye': {
+
+            x: 1.8 * Math.cos(angle * Math.PI / 180),
+
+            y: 1.8 * Math.sin(angle * Math.PI / 180),
+
+            z: 1.2
+
+        }
+
+    });
+
+}, 100);
+
+</script>
+
+
+
+
+
+
+
+
+{% endblock %}
