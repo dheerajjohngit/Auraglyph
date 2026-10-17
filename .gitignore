@@ -1,0 +1,12 @@
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+db.sqlite3
+db_before_restore.sqlite3
+.env
+.env.*
+!.env.example
+staticfiles/
+products_backup.json
+products_backup_utf8.json

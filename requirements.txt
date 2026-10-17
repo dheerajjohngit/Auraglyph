@@ -2,3 +2,5 @@ Django==6.0.5
 dj-database-url
 psycopg[binary]
 whitenoise
+gunicorn
+Pillow
