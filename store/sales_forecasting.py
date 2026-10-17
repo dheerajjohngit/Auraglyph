@@ -1,26 +1,35 @@
-from sklearn.linear_model import LinearRegression
-import numpy as np
 
 def predict_next_month_sales(revenue_values):
+    """
+    Predict next month's revenue using a simple linear trend.
+    Returns None if fewer than two revenue values are available.
+    """
 
-    if len(revenue_values) < 2:
+    values = [float(value) for value in revenue_values]
+
+    n = len(values)
+
+    if n < 2:
         return None
 
-    months = np.arange(
-        1,
-        len(revenue_values) + 1
-    ).reshape(-1, 1)
+    # Months are represented as 1, 2, 3, ..., n.
+    x_mean = (n + 1) / 2
+    y_mean = sum(values) / n
 
-    sales = np.array(revenue_values)
-
-    model = LinearRegression()
-
-    model.fit(months, sales)
-
-    next_month = np.array(
-        [[len(revenue_values) + 1]]
+    numerator = sum(
+        (month - x_mean) * (revenue - y_mean)
+        for month, revenue in enumerate(values, start=1)
     )
 
-    prediction = model.predict(next_month)
+    denominator = sum(
+        (month - x_mean) ** 2
+        for month in range(1, n + 1)
+    )
 
-    return round(float(prediction[0]), 2)
+    if denominator == 0:
+        return round(y_mean, 2)
+
+    slope = numerator / denominator
+    prediction = y_mean + slope * ((n + 1) - x_mean)
+
+    return round(float(prediction), 2)

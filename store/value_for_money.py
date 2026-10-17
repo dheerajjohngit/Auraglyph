@@ -1,4 +1,6 @@
+
 def calculate_vfm(product):
+    """Calculate a product's value-for-money score."""
 
     price = float(product.price)
 
@@ -8,22 +10,18 @@ def calculate_vfm(product):
     )
 
     score = (
-
-        product.processor_score * 0.50 +
-
-        product.camera_score * 0.45 +
-
-        product.battery_score * 0.20 +
-
-        product.display_score * 0.10 +
-
-        price_score * 0.30
-
+        product.processor_score * 0.50
+        + product.camera_score * 0.45
+        + product.battery_score * 0.20
+        + product.display_score * 0.10
+        + price_score * 0.30
     )
 
     return round(score, 2)
 
+
 def predict_vfm(score):
+    """Convert a value-for-money score into a readable label."""
 
     if score >= 85:
         return "🔥 Best Value"
